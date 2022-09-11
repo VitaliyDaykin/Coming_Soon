@@ -39,6 +39,23 @@
             }
         }
     }
+
+    &__main-text {
+        display: none;
+        font-size: 34px;
+        line-height: 40px;
+        text-align: center;
+        color: #004aad;
+        @media (max-width: $mobile) {
+            font-size: 24px;
+            line-height: 28px;
+            max-width: 340px;
+        }
+
+        &._add-text {
+            display: block;
+        }
+    }
     // .coming-soon__main-form
     &__main-form {
     }
@@ -78,6 +95,10 @@
     &__input-email._error {
         box-shadow: 0 0 15px red;
     }
+}
+
+#form._remove-form {
+    display: none;
 }
 
 .btn {

@@ -23,18 +23,22 @@
         }
     }), 0);
     const script_form = document.getElementById("form");
+    const thankText = document.getElementById("thank-text");
     script_form.addEventListener("submit", formSend);
     async function formSend(e) {
         e.preventDefault();
         const valueEmail = document.getElementById("formEmail");
         formValidate1(script_form);
-        await fetch("https://wgyef7gexilrvcjkcermdqtisa0ponmg.lambda-url.us-east-1.on.aws/", {
+        let response = await fetch("https://wgyef7gexilrvcjkcermdqtisa0ponmg.lambda-url.us-east-1.on.aws/", {
             method: "POST",
             body: JSON.stringify({
                 email: valueEmail.value
             })
         });
-        script_form.reset();
+        if (response.ok) {
+            thankTextAdd(thankText, script_form);
+            script_form.reset();
+        }
     }
     function formValidate1(form) {
         let error = 0;
@@ -67,6 +71,10 @@
     }
     function emailTest(input) {
         return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(input.value);
+    }
+    function thankTextAdd(thankText, form) {
+        thankText.classList.add("_add-text");
+        form.classList.add("_remove-form");
     }
     window["FLS"] = true;
     isWebp();

@@ -5,6 +5,8 @@ import { isMobile } from "./functions.js";
 import { flsModules } from "./modules.js";
 
 const form = document.getElementById('form');
+const thankText = document.getElementById('thank-text');
+
 form.addEventListener('submit', formSend)
 
 
@@ -19,7 +21,10 @@ async function formSend(e) {
 		method: 'POST',
 		body: JSON.stringify({ email: valueEmail.value })
 	});
-	form.reset();
+	if (response.ok) {
+		thankTextAdd(thankText, form)
+		form.reset();
+	}
 
 }
 
@@ -59,4 +64,9 @@ function formRemoveError(input) {
 
 function emailTest(input) {
 	return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(input.value);
+}
+
+function thankTextAdd(thankText, form) {
+	thankText.classList.add('_add-text');
+	form.classList.add('_remove-form');
 }
