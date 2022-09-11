@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    @@include('html/_head.htm',{ "title":"Coming Soon" })
+    <body>
+        <div class="wrapper">
+            @@include('html/_header.htm',{})
+            <main class="page">
+                <div class="coming-soon">
+                    <div class="coming-soon__main main">
+                        <div class="coming-soon__main-image">
+                            <img src="@img/01.png" class="image-desc" alt="Coming Soon" />
+                            <img src="@img/01mob.png" class="image-mob" alt="Coming Soon" />
+                        </div>
+                        <div class="coming-soon__main-form form">
+                            <form action="#" id="form">
+                                <div class="form__wrapper">
+                                    <label for="formEmail" class="form__lable-email">your email</label>
+                                    <input type="text" id="formEmail" name="email" class="form__input-email" placeholder="your email" />
+                                    <button type="submit" class="form__button btn">Subscribe</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="coming-soon__social social">
+                        <div class="social__item _icon-foollow"></div>
+                        <div class="social__item"><a href="#" class="_icon-facebook"></a></div>
+                        <div class="social__item"><a href="#" class="_icon-insta"></a></div>
+                    </div>
+                </div>
+            </main>
+            @@include('html/_footer.htm',{})
+        </div>
+        @@include('html/_popup.htm',{}) @@include('html/_js.htm',{})
+    </body>
+</html>
