@@ -29,6 +29,7 @@ function formValidate1(form) {
 
 	for (let index = 0; index < formReq.length; index++) {
 		const input = formReq[index];
+		formRemoveError(input);
 
 		if (input.classList.contains('_email')) {
 			if (emailTest(input)) {
