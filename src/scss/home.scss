@@ -27,6 +27,7 @@
         margin-bottom: rem(50);
         & img {
             display: block;
+            max-width: 100%;
         }
         @media (min-width: $tablet) {
             .image-mob {
